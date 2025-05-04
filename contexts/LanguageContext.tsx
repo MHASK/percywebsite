@@ -20,7 +20,7 @@ const translations: Translations = {
     
     // Hero Section
     'hero.tagline': 'Guide users. Cut tickets. Boost adoption.',
-    'hero.headline': 'AI that Onboards & Supports — so you don\'t have to',
+    'hero.headline': 'AI to Onboards & Supports — so you don\'t have to',
     'hero.subheadline': 'Percy lives in your product, showing users what to do — right when they need it.',
     'hero.tryPercy': 'Try Percy free',
     'hero.bookDemo': 'Book a demo',
