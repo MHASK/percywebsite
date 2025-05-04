@@ -19,8 +19,8 @@ const translations: Translations = {
     'nav.getStarted': 'Get started',
     
     // Hero Section
-    'hero.tagline': 'Guide users. Cut tickets. Boost adoption.',
-    'hero.headline': 'AI to Onboards & Supports — so you don\'t have to',
+    'hero.tagline': 'AI that Onboards & Supports — so you don\'t have to',
+    'hero.headline': 'Guide users. Cut tickets. Boost adoption.',
     'hero.subheadline': 'Percy lives in your product, showing users what to do — right when they need it.',
     'hero.tryPercy': 'Try Percy free',
     'hero.bookDemo': 'Book a demo',
