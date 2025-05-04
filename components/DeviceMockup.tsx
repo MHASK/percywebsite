@@ -230,7 +230,7 @@ const DeviceMockup = () => {
                       width={80}
                       height={80}
                       className="rounded-full absolute right-12 bottom-0 border-4 border-white shadow-md"
-                    />
+                  />
                   </div>
                 </div>
               </div>
@@ -521,7 +521,7 @@ const DeviceMockup = () => {
               </div>
                           <p className="font-semibold text-base mb-1 text-gray-900">
                             {t('testimonial1.name')}
-                          </p>
+              </p>
                           <p className="text-sm text-gray-500">
                             {t('testimonial1.title')}
                           </p>
