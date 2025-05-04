@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Manrope } from 'next/font/google'
 import './globals.css'
 import { LanguageProvider } from "../contexts/LanguageContext";
+import Script from 'next/script'
 
 const manrope = Manrope({
   subsets: ['latin'],
@@ -117,6 +118,20 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* Google Analytics */}
+        <Script 
+          src="https://www.googletagmanager.com/gtag/js?id=G-0W4Y2FMJYH" 
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-0W4Y2FMJYH');
+          `}
+        </Script>
+        
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
         <link rel="icon" href="/percy_logo2.png" type="image/png" />
         <link rel="apple-touch-icon" href="/percy_logo2.png" />
