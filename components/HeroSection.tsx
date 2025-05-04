@@ -1,13 +1,13 @@
 "use client";
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import 'plyr/dist/plyr.css';
 import { useLanguage } from '../contexts/LanguageContext';
 import type Plyr from 'plyr';
 
 const HeroSection = () => {
   const { t, language } = useLanguage();
-  const [player, setPlayer] = useState<Plyr | null>(null);
   const playerRef = useRef<HTMLDivElement>(null);
+  const playerInstance = useRef<Plyr | null>(null);
   
   // Extract video ID from the YouTube URL
   const getVideoId = (url: string) => {
@@ -20,9 +20,9 @@ const HeroSection = () => {
 
   useEffect(() => {
     // Cleanup existing player
-    if (player) {
-      player.destroy();
-      setPlayer(null);
+    if (playerInstance.current) {
+      playerInstance.current.destroy();
+      playerInstance.current = null;
     }
 
     // Create new player container
@@ -37,21 +37,21 @@ const HeroSection = () => {
       // Initialize new player
       import('plyr').then((module) => {
         const Plyr = module.default;
-        const newPlayer = new Plyr('#player', { 
+        playerInstance.current = new Plyr('#player', {
           muted: true,
           autoplay: true,
           controls: ['play-large', 'play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen']
         });
-        setPlayer(newPlayer);
       });
     }
 
     return () => {
-      if (player) {
-        player.destroy();
+      if (playerInstance.current) {
+        playerInstance.current.destroy();
+        playerInstance.current = null;
       }
     };
-  }, [language, videoId, player]);
+  }, [language, videoId]);
 
   return (
     <section className="text-center max-w-6xl mx-auto pt-16 pb-8 px-4 xl:px-0">
@@ -92,8 +92,7 @@ const HeroSection = () => {
       
       {/* Plyr YouTube Video Embed */}
       <div className="w-full max-w-none rounded-3xl overflow-hidden shadow-lg mb-16 mt-2">
-        <div className="relative w-full aspect-[16/9] bg-black p-0 rounded-xl" ref={playerRef}>
-        </div>
+        <div className="relative w-full aspect-[16/9] bg-black p-0 rounded-xl" ref={playerRef} />
       </div>
     </section>
   );
