@@ -284,8 +284,8 @@ const translations: Translations = {
     'nav.getStarted': 'Loslegen',
 
     /* ── Hero ───────────────────────────────────────────────────────────── */
-    'hero.tagline': 'Nutzer leiten. Tickets senken. Adoption steigern.',
-    'hero.headline': 'KI, die Onboarding & Support übernimmt – damit Sie es nicht müssen',
+    'hero.tagline': 'KI, die Onboarding & Support übernimmt – damit Sie es nicht müssen',
+    'hero.headline': 'Nutzer leiten. Tickets senken. Adoption steigern.',
     'hero.subheadline': 'Percy läuft direkt in Ihrem Produkt und zeigt Nutzern exakt dann den nächsten Schritt, wenn sie ihn brauchen.',
     'hero.tryPercy': 'Percy gratis testen',
     'hero.bookDemo': 'Demo buchen',
