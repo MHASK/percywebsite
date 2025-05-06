@@ -10,13 +10,16 @@ const HeroSection = () => {
   const playerInstance = useRef<Plyr | null>(null);
   
   // Extract video ID from the YouTube URL
-  const getVideoId = (url: string) => {
+  const getVideoId = (url: string | undefined | null) => {
+    if (!url || typeof url !== 'string') return null;
     const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
     const match = url.match(regExp);
     return (match && match[2].length === 11) ? match[2] : null;
   };
 
-  const videoId = getVideoId(t('youtube.link'));
+  // Use the correct translation key for the video URL
+  const videoUrl = t('hero.videoUrl');
+  const videoId = getVideoId(videoUrl);
 
   useEffect(() => {
     // Cleanup existing player
@@ -93,6 +96,12 @@ const HeroSection = () => {
       {/* Plyr YouTube Video Embed */}
       <div className="w-full max-w-none rounded-3xl overflow-hidden shadow-lg mb-16 mt-2">
         <div className="relative w-full aspect-[16/9] bg-black p-0 rounded-xl" ref={playerRef} />
+        {/* Show fallback if videoId is missing */}
+        {(!videoId || videoId === '') && (
+          <div className="absolute inset-0 flex items-center justify-center text-white bg-black/80">
+            <span>Video unavailable</span>
+          </div>
+        )}
       </div>
     </section>
   );

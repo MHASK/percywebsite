@@ -38,16 +38,84 @@ const Roadmap = () => {
         </div>
       </div>
 
-      {/* Roadmap Entry 1 - Latest */}
+      {/* Roadmap Entry 4 - Coming Soon (Now First) */}
       <div className="grid grid-cols-1 md:grid-cols-[120px_1fr] gap-6 mb-16">
-        {/* Left Column - Date (hidden on mobile) */}
         <div className="hidden md:block">
-          <span className="text-gray-500 text-sm">June 8, 2024</span>
+          <span className="text-gray-500 text-sm">May 4, 2025</span>
         </div>
 
-        {/* Right Column - Content */}
         <div>
-          {/* Tags */}
+          <div className="flex items-center gap-2 mb-4">
+            <div className="inline-block px-3 py-1 bg-amber-100 text-amber-800 text-xs font-medium rounded-full">
+              {t('changelog.tag.comingSoon')}
+            </div>
+          </div>
+
+          <h2 className="text-2xl font-semibold mb-4">
+            {t('changelog.entry4.title')}
+          </h2>
+
+          <div className="block md:hidden mb-4">
+            <span className="text-gray-500 text-sm">May 4, 2025</span>
+          </div>
+
+          <div className="text-gray-600 space-y-4">
+            <p>
+              {t('changelog.entry4.desc')}
+            </p>
+
+            <div className="space-y-3">
+              <div>
+                <span className="text-gray-900 font-medium">
+                  {t('changelog.entry4.feature1.title')}{' '}
+                </span>
+                <span>
+                  {t('changelog.entry4.feature1.desc')}
+                </span>
+              </div>
+
+              <div>
+                <span className="text-gray-900 font-medium">
+                  {t('changelog.entry4.feature2.title')}{' '}
+                </span>
+                <span>
+                  {t('changelog.entry4.feature2.desc')}
+                </span>
+              </div>
+
+              <div>
+                <span className="text-gray-900 font-medium">
+                  {t('changelog.entry4.feature3.title')}{' '}
+                </span>
+                <span>
+                  {t('changelog.entry4.feature3.desc')}
+                </span>
+              </div>
+
+              <div>
+                <span className="text-gray-900 font-medium">
+                  {t('changelog.entry4.feature4.title')}{' '}
+                </span>
+                <span>
+                  {t('changelog.entry4.feature4.desc')}
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-6 p-4 bg-gray-50 rounded-lg border border-gray-100 text-center text-gray-500">
+            <p>Coming in Q3 2025</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Roadmap Entry 1 */}
+      <div className="grid grid-cols-1 md:grid-cols-[120px_1fr] gap-6 mb-16">
+        <div className="hidden md:block">
+          <span className="text-gray-500 text-sm">April 28, 2025</span>
+        </div>
+
+        <div>
           <div className="flex items-center gap-2 mb-4">
             <div className="flex items-center gap-1.5">
               <div className="w-2 h-2 rounded-full bg-[#5666A2]"></div>
@@ -59,14 +127,12 @@ const Roadmap = () => {
             </div>
           </div>
 
-          {/* Title */}
           <h2 className="text-2xl font-semibold mb-4">
             {t('changelog.entry1.title')}
           </h2>
 
-          {/* Date (visible only on mobile) */}
           <div className="block md:hidden mb-4">
-            <span className="text-gray-500 text-sm">June 8, 2024</span>
+            <span className="text-gray-500 text-sm">April 28, 2025</span>
           </div>
 
           {/* Description */}
@@ -121,7 +187,7 @@ const Roadmap = () => {
       {/* Roadmap Entry 2 */}
       <div className="grid grid-cols-1 md:grid-cols-[120px_1fr] gap-6 mb-16">
         <div className="hidden md:block">
-          <span className="text-gray-500 text-sm">May 15, 2024</span>
+          <span className="text-gray-500 text-sm">April 15, 2025</span>
         </div>
 
         <div>
@@ -141,7 +207,7 @@ const Roadmap = () => {
           </h2>
 
           <div className="block md:hidden mb-4">
-            <span className="text-gray-500 text-sm">May 15, 2024</span>
+            <span className="text-gray-500 text-sm">April 15, 2025</span>
           </div>
 
           <div className="text-gray-600 space-y-4">
@@ -194,7 +260,7 @@ const Roadmap = () => {
       {/* Roadmap Entry 3 */}
       <div className="grid grid-cols-1 md:grid-cols-[120px_1fr] gap-6 mb-16">
         <div className="hidden md:block">
-          <span className="text-gray-500 text-sm">April 22, 2024</span>
+          <span className="text-gray-500 text-sm">April 1, 2025</span>
         </div>
 
         <div>
@@ -214,7 +280,7 @@ const Roadmap = () => {
           </h2>
 
           <div className="block md:hidden mb-4">
-            <span className="text-gray-500 text-sm">April 22, 2024</span>
+            <span className="text-gray-500 text-sm">April 1, 2025</span>
           </div>
 
           <div className="text-gray-600 space-y-4">
@@ -264,77 +330,6 @@ const Roadmap = () => {
           <p className="text-gray-600 mt-4">
             {t('changelog.entry3.checkOut')} <a href="#" className="text-[#5666A2] hover:underline">{t('changelog.entry3.devPortal')}</a> {t('changelog.entry3.forMore')}
           </p>
-        </div>
-      </div>
-
-      {/* Roadmap Entry 4 - Coming Soon */}
-      <div className="grid grid-cols-1 md:grid-cols-[120px_1fr] gap-6 mb-16">
-        <div className="hidden md:block">
-          <span className="text-gray-500 text-sm">Coming soon</span>
-        </div>
-
-        <div>
-          <div className="flex items-center gap-2 mb-4">
-            <div className="inline-block px-3 py-1 bg-amber-100 text-amber-800 text-xs font-medium rounded-full">
-              {t('changelog.tag.comingSoon')}
-            </div>
-          </div>
-
-          <h2 className="text-2xl font-semibold mb-4">
-            {t('changelog.entry4.title')}
-          </h2>
-
-          <div className="block md:hidden mb-4">
-            <span className="text-gray-500 text-sm">Coming soon</span>
-          </div>
-
-          <div className="text-gray-600 space-y-4">
-            <p>
-              {t('changelog.entry4.desc')}
-            </p>
-
-            <div className="space-y-3">
-              <div>
-                <span className="text-gray-900 font-medium">
-                  {t('changelog.entry4.feature1.title')}{' '}
-                </span>
-                <span>
-                  {t('changelog.entry4.feature1.desc')}
-                </span>
-              </div>
-
-              <div>
-                <span className="text-gray-900 font-medium">
-                  {t('changelog.entry4.feature2.title')}{' '}
-                </span>
-                <span>
-                  {t('changelog.entry4.feature2.desc')}
-                </span>
-              </div>
-
-              <div>
-                <span className="text-gray-900 font-medium">
-                  {t('changelog.entry4.feature3.title')}{' '}
-                </span>
-                <span>
-                  {t('changelog.entry4.feature3.desc')}
-                </span>
-              </div>
-
-              <div>
-                <span className="text-gray-900 font-medium">
-                  {t('changelog.entry4.feature4.title')}{' '}
-                </span>
-                <span>
-                  {t('changelog.entry4.feature4.desc')}
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <div className="mt-6 p-4 bg-gray-50 rounded-lg border border-gray-100 text-center text-gray-500">
-            <p>Coming in Q3 2024</p>
-          </div>
         </div>
       </div>
     </div>

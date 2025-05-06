@@ -132,6 +132,37 @@ export default function RootLayout({
           `}
         </Script>
         
+        <Script id="intercom-settings" strategy="afterInteractive">
+          {`
+            window.intercomSettings = {
+              api_base: "https://api-iam.intercom.io",
+              app_id: "jrd66iqe",
+            };
+          `}
+        </Script>
+        <Script id="intercom-widget" strategy="afterInteractive">
+          {`
+            (function(){
+              var w=window;var ic=w.Intercom;
+              if(typeof ic==="function"){
+                ic('reattach_activator');ic('update',w.intercomSettings);
+              }else{
+                var d=document;var i=function(){i.c(arguments);};i.q=[];i.c=function(args){i.q.push(args);};w.Intercom=i;
+                var l=function(){
+                  var s=d.createElement('script');
+                  s.type='text/javascript';s.async=true;
+                  s.src='https://widget.intercom.io/widget/jrd66iqe';
+                  var x=d.getElementsByTagName('script')[0];
+                  x.parentNode.insertBefore(s,x);
+                };
+                if(document.readyState==='complete'){l();}
+                else if(w.attachEvent){w.attachEvent('onload',l);}
+                else{w.addEventListener('load',l,false);}
+              }
+            })();
+          `}
+        </Script>
+        
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
         <link rel="icon" href="/percy_logo2.png" type="image/png" />
         <link rel="apple-touch-icon" href="/percy_logo2.png" />
@@ -200,7 +231,7 @@ export default function RootLayout({
         className={`${manrope.className} antialiased min-h-screen`}
       >
         <LanguageProvider>
-          {children}
+        {children}
         </LanguageProvider>
       </body>
     </html>

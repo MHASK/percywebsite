@@ -32,6 +32,9 @@ const Navbar = () => {
         <Link href="/roadmap" className="font-[600] text-base">
           {t('nav.roadmap')}
         </Link>
+        {/* <Link href="/blog" className="font-[600] text-base">
+          Blog
+        </Link> */}
         {/* <Link href="/" className="font-[600] text-base">
           {t('nav.about')}
         </Link> */}
@@ -104,6 +107,13 @@ const Navbar = () => {
             >
               {t('nav.roadmap')}
             </Link>
+            {/* <Link
+              href="/blog"
+              className="font-[600] text-base block py-2"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Blog
+            </Link> */}
             <Link
               href="/"
               className="font-[600] text-base block py-2"
